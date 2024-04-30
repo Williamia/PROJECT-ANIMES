@@ -1,4 +1,6 @@
 import './App.css'
+import Footer from './components/footer'
+import GitIcon from '../src/assets/icons8-github-30.png'
 
 function App() {
   
@@ -7,11 +9,11 @@ function App() {
         <div className='content'>
           <div className='content-main-text'>
             <div className='content-div-button-gitproject'>
-              <button className='button-gitproject'>GITHUB PROJECT</button>
+              <button className='button-gitproject'><img src={GitIcon} alt="github" />GITHUB PROJECT</button>
             </div>
             <div className='content-text-title'>
               <p className='title-pag'>PROJECT ANIME'S</p>
-              <button className='button-getstarted'>GET STARTED</button>
+              <button className='button-getstarted'> GET STARTED</button>
             </div>
           </div>
 
@@ -27,6 +29,7 @@ function App() {
             </div>
           </div>
         </div>
+        <Footer />
    </div>
   )
 }
