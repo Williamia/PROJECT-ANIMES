@@ -68,6 +68,10 @@ body{
     color: white;
     font-size: 90px;
   }
+
+  .images-mobile-view{
+    display: none;
+  }
   
   .button-getstarted{
     width: 401px;
@@ -123,6 +127,7 @@ body{
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
     /*border: 1px solid white;*/
     cursor: pointer;
+    max-width: 100%;
   }
   
   .image-pag:hover{

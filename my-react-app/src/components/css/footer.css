@@ -23,3 +23,11 @@
 .container-footer b{
     color: #410AB6;
 }
+
+@media only screen and (max-width: 600px) {
+    /* Estilos específicos para dispositivos móveis */
+    .footer-div{
+        display: none;
+    }
+  }
+  

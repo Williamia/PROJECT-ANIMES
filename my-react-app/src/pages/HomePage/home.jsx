@@ -4,6 +4,7 @@ import GitIcon from '../../../public/icons8-github-30.png'
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/loading';
+import './homeMobile.css'
 
 export default function Home() {
   
@@ -29,8 +30,9 @@ export default function Home() {
          
         </div>
         <div className='content-text-title'>
-          <p className='title-pag'>PROJECT ANIME'S</p>       
-          <Link to="/">
+          <p className='title-pag'>PROJECT ANIME'S</p>     
+          <div className='images-mobile-view'></div>  
+          <Link className='link-mobile-view' to="/">
             <button className='button-getstarted'>GET STARTED</button>
           </Link>
         </div>
