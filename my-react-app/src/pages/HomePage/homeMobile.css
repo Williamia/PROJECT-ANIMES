@@ -70,6 +70,13 @@
     font-size: 18px;
    }
 
+   .button-getstarted:hover{
+    background-color: white;
+    color: #410AB6;
+    border: 1px solid #410AB6;
+    transition: 0.5s;
+  }
+
    .images-header-pag{
     display: none;
    }
