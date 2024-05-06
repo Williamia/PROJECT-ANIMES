@@ -4,3 +4,13 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+body::-webkit-scrollbar{
+  width: 12px;
+  background-color:#030303;
+}
+
+body::-webkit-scrollbar-thumb{
+  border: 1px solid #030303;
+  background-color: #030303;
+  border-radius: 5px;
+}

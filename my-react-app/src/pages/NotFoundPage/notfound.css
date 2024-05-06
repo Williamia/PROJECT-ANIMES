@@ -19,7 +19,7 @@
     height: 100%;
     width: 50%;
     background-size: cover;
-    background-image: url('../../assets/image-not-found.png');
+    background-image: url('../../../public/image-not-found.png');
 }
 
 .text-not-found{

@@ -24,7 +24,9 @@ export default function Home() {
       <div className='content'>
       <div className='content-main-text'>
         <div className='content-div-button-gitproject'>
-          <button className='button-gitproject'><img src={GitIcon} alt="github" />GITHUB PROJECT</button>
+  
+          <button className='button-gitproject'><a href="https://github.com/Williamia/PROJECT-ANIMES"><img src={GitIcon} alt="github" />GITHUB PROJECT</a></button>
+         
         </div>
         <div className='content-text-title'>
           <p className='title-pag'>PROJECT ANIME'S</p>       
@@ -47,7 +49,7 @@ export default function Home() {
       </div>
     </div>
     )}     
-        <Footer />
+     <Footer />   
    </div>
 
   )
