@@ -1,6 +1,6 @@
 import './home.css'
 import Footer from '../../components/footer'
-import GitIcon from '../../assets/icons8-github-30.png'
+import GitIcon from '../../../public/icons8-github-30.png'
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/loading';
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         <div className='content-text-title'>
           <p className='title-pag'>PROJECT ANIME'S</p>       
-          <Link to="/*">
+          <Link to="/">
             <button className='button-getstarted'>GET STARTED</button>
           </Link>
         </div>
