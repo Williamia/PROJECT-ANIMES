@@ -32,7 +32,7 @@ export default function Home() {
         <div className='content-text-title'>
           <p className='title-pag'>PROJECT ANIME'S</p>     
           <div className='images-mobile-view'></div>  
-          <Link className='link-mobile-view' to="/">
+          <Link className='link-mobile-view' to="/anime-page">
             <button className='button-getstarted'>GET STARTED</button>
           </Link>
         </div>

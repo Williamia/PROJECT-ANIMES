@@ -1,0 +1,43 @@
+    .list-animes-component {
+    display: flex;
+    width: 95%;
+    height: 95%;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-x: auto;
+  }
+  
+  .card-animes {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    font-size: 40px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 4%;
+    cursor: pointer;
+  }
+  
+  .anime-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.822);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card-animes:hover .anime-text {
+    opacity: 1;
+  }
+
+
