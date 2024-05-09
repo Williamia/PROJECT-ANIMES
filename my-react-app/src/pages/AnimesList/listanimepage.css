@@ -29,3 +29,35 @@
     margin: 0;
     font-size: 40px;
 }
+
+.search-bar{
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.input-search{
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding-left: 15px;
+}
+
+.search-button{
+    height: 100%;
+    border: none;
+    background-color: white;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: text;
+}
+
+.search-button img{
+    height: 20px;
+}

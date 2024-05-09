@@ -29,6 +29,46 @@ const data = {
           { id: 302, name: "Vegeta", imageUrl: "url_para_imagem_vegeta.jpg" },
           { id: 303, name: "Piccolo", imageUrl: "url_para_imagem_piccolo.jpg" }
         ]
+      },
+      {
+        id: 4,
+        title: "Chainsaw man",
+        imageUrl: "https://i.pinimg.com/564x/5c/4b/fb/5c4bfbda717cbefac5fc52c93ab5afab.jpg",
+        characters: [
+          { id: 301, name: "Goku", imageUrl: "url_para_imagem_goku.jpg" },
+          { id: 302, name: "Vegeta", imageUrl: "url_para_imagem_vegeta.jpg" },
+          { id: 303, name: "Piccolo", imageUrl: "url_para_imagem_piccolo.jpg" }
+        ]
+      },
+      {
+        id: 5,
+        title: "Haikyuu",
+        imageUrl: "https://i.pinimg.com/564x/0b/29/42/0b2942a631ec3f7502eea5e6c36c193a.jpg",
+        characters: [
+          { id: 301, name: "Goku", imageUrl: "url_para_imagem_goku.jpg" },
+          { id: 302, name: "Vegeta", imageUrl: "url_para_imagem_vegeta.jpg" },
+          { id: 303, name: "Piccolo", imageUrl: "url_para_imagem_piccolo.jpg" }
+        ]
+      },
+      {
+        id: 6,
+        title: "Dr. Stone",
+        imageUrl: "https://i.pinimg.com/564x/dd/44/4c/dd444cb5284dacebc1aaaf158ddb09b3.jpg",
+        characters: [
+          { id: 301, name: "Goku", imageUrl: "url_para_imagem_goku.jpg" },
+          { id: 302, name: "Vegeta", imageUrl: "url_para_imagem_vegeta.jpg" },
+          { id: 303, name: "Piccolo", imageUrl: "url_para_imagem_piccolo.jpg" }
+        ]
+      },
+      {
+        id: 7,
+        title: "Kakegurui",
+        imageUrl: "https://i.pinimg.com/564x/23/9f/28/239f28d4d27f04a4a94f56d5d5a88ef7.jpg",
+        characters: [
+          { id: 301, name: "Goku", imageUrl: "url_para_imagem_goku.jpg" },
+          { id: 302, name: "Vegeta", imageUrl: "url_para_imagem_vegeta.jpg" },
+          { id: 303, name: "Piccolo", imageUrl: "url_para_imagem_piccolo.jpg" }
+        ]
       }
     ]
   };

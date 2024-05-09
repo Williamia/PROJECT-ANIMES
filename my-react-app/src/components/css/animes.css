@@ -20,6 +20,8 @@
     border-radius: 5px;
     margin-top: 4%;
     cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.384);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
   }
   
   .anime-text {
@@ -28,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.822);
+    background-color: rgba(0, 0, 0, 0.959);
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -40,4 +42,24 @@
     opacity: 1;
   }
 
+  .title-cards{
+    font-weight: bold;
+  }
 
+  .title-cards.more{
+    margin-left: 1%;
+  }
+
+  .subtitle-cards{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subtitle-cards img{
+    margin-top: 3px;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
