@@ -1,72 +1,75 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware para permitir análise do corpo da requisição (req.body)
 app.use(bodyParser.json());
+
+app.use(cors())
 
 let animes = [];
 
-// Rota para criar um novo anime
 app.post('/animes', (req, res) => {
-  const { nome, imagem, personagens } = req.body;
+  const { name, image, characters, episodes, description, banner } = req.body;
 
-  // Verificar se todos os campos necessários foram fornecidos
-  if (!nome || !imagem || !personagens || !Array.isArray(personagens)) {
-    return res.status(400).json({ mensagem: 'Por favor, forneça nome, imagem e um vetor de personagens.' });
+  if (!name || !image || !characters || !Array.isArray(characters) || !banner) {
+    return res.status(400).json({ message: 'Please provide name, image, banner, and an array of characters.' });
   }
 
-  // Criar um novo anime
-  const novoAnime = {
-    id: animes.length + 1, // Gerar um ID único
-    nome,
-    imagem,
-    personagens: personagens // Adicionando os personagens fornecidos ao vetor de personagens do anime
+  const newAnime = {
+    id: animes.length + 1,
+    name,
+    image,
+    characters,
+    episodes,
+    description,
+    banner
   };
-  
-  // Adicionar o novo anime ao vetor de animes
-  animes.push(novoAnime);
 
-  // Responder com o novo anime criado
-  res.status(201).json(novoAnime);
+  animes.push(newAnime);
+
+  res.status(201).json(newAnime);
 });
 
-// Rota para cadastrar um personagem em um anime específico
-app.post('/animes/:animeId/personagens', (req, res) => {
+app.post('/animes/:animeId/characters', (req, res) => {
   const animeId = parseInt(req.params.animeId);
-  const { nome, imagem } = req.body;
+  const { name, image } = req.body;
 
-  // Verificar se o anime existe
   const anime = animes.find(anime => anime.id === animeId);
   if (!anime) {
-    return res.status(404).json({ mensagem: 'Anime não encontrado.' });
+    return res.status(404).json({ message: 'Anime not found.' });
   }
 
-  // Verificar se todos os campos necessários foram fornecidos
-  if (!nome || !imagem) {
-    return res.status(400).json({ mensagem: 'Por favor, forneça nome e imagem do personagem.' });
+  if (!name || !image) {
+    return res.status(400).json({ message: 'Please provide name and image of the character.' });
   }
 
-  // Criar um novo personagem
-  const novoPersonagem = {
-    nome,
-    imagem
+  const newCharacter = {
+    name,
+    image
   };
 
-  // Adicionar o novo personagem ao anime específico
-  anime.personagens.push(novoPersonagem);
+  anime.characters.push(newCharacter);
 
-  // Responder com o novo personagem criado
-  res.status(201).json(novoPersonagem);
+  res.status(201).json(newCharacter);
 });
 
-// Rota de exemplo para listar todos os animes
 app.get('/animes', (req, res) => {
   res.json(animes);
 });
 
-// Iniciar o servidor
+app.get('/animes/:id', (req, res) => {
+  const animeId = parseInt(req.params.id);
+
+  const anime = animes.find(anime => anime.id === animeId);
+  if (!anime) {
+    return res.status(404).json({ message: 'Anime not found.' });
+  }
+
+  res.json(anime);
+});
+
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
