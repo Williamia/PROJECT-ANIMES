@@ -8,12 +8,15 @@ export default function DetailPage(){
     const { id } = useParams();
     const [anime, setAnime] = useState(null);
 
+    console.log()
+
     useEffect(() => {
         fetch(`http://localhost:3000/animes/${id}`)
-            .then(response => response.json())
+            .then(response => {console.log(response); return response.json()})
             .then(data => setAnime(data))
             .catch(error => console.error('Erro ao buscar detalhes do anime:', error));
     }, [id]);
+
 
     if (!anime) {
         return <div>Anime not found</div>;

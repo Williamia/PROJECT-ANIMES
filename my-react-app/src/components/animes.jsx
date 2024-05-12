@@ -20,7 +20,7 @@ function Animes({ searchTerm }) {
     return (
         <div className="list-animes-component">
             {filteredAnimes.map((anime) => (
-                <Link to={`/anime-page/${anime.id}`} key={anime.id} className="anime-link">
+                <Link to={`/anime-page/${anime._id}`} key={anime._id} className="anime-link">
                     <div className="card-animes" style={{ backgroundImage: `url(${anime.image})` }}>
                         <div className="anime-text">
                             <p className="title-cards">{anime.name}</p>
