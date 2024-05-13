@@ -174,6 +174,23 @@ app.delete('/animes/:animeId/characters/:characterId', (req, res) => {
     });
 });
 
+app.patch('/animes/:id', (req, res) => {
+  const animeId = req.params.id;
+  const { name, image, characters, episodes, description, banner } = req.body;
+
+  Anime.findByIdAndUpdate(animeId, { name, image, characters, episodes, description, banner }, { new: true })
+    .then(anime => {
+      if (!anime) {
+        return res.status(404).json({ message: 'Anime not found.' });
+      }
+      res.json(anime);
+    })
+    .catch(err => {
+      console.error('Error updating anime:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
