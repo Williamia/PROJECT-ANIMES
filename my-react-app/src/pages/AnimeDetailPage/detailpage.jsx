@@ -26,19 +26,33 @@ export default function DetailPage(){
         <div className="div-detail-page">
             <Menu />
             <div className="anime-details">
-                <div className="banner-anime" style={{ backgroundImage: `url(${anime.banner})` }}></div>
-                <h1>{anime.name}</h1>
-                <p>{anime.description}</p>
-                <p>Episodes: {anime.episodes}</p>
-                <h2>Characters</h2>
-                <ul>
-                    {anime.characters.map((character, index) => (
-                        <li key={index}>
+                <div className="anime-detail-description">
+                    <div className="banner-anime" style={{ backgroundImage: `url(${anime.banner})` }} />
+                    <div className="text-detail-descripton">
+                        <div className="text-title-and-episodes">
+                            <p className="text-anime-name">{anime.name}</p>
+                            <p className="text-anime-eps">{anime.episodes} Episodes</p>
+                        </div>
+
+                        <div className="text-detail-sinopse">
+                            <p className="text-sinopse title">Description</p>
+                            <p>{anime.description}</p>
+                        </div>
+
+                        <div className="title-main-characters"><p>Main characters</p></div>
+
+                        <div className="carrosel-characters">
+                        {anime.characters.map((character, index) => (
+                        <div className="card-characters" key={index}>
                             <img src={character.image} alt={character.name} />
+                            <div className="text-character-name">
                             <p>{character.name}</p>
-                        </li>
+                            </div>
+                        </div> 
                     ))}
-                </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>

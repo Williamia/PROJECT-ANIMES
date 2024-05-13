@@ -97,6 +97,83 @@ app.get('/animes/:id', (req, res) => {
     });
 });
 
+app.delete('/animes/:id', (req, res) => {
+  const animeId = req.params.id;
+
+  Anime.findByIdAndDelete(animeId)
+    .then(anime => {
+      if (!anime) {
+        return res.status(404).json({ message: 'Anime not found.' });
+      }
+      res.status(204).end();
+    })
+    .catch(err => {
+      console.error('Error deleting anime:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+app.patch('/animes/:animeId/characters/:characterId', (req, res) => {
+  const animeId = req.params.animeId;
+  const characterId = req.params.characterId;
+  const { name, image } = req.body;
+
+  Anime.findById(animeId)
+    .then(anime => {
+      if (!anime) {
+        return res.status(404).json({ message: 'Anime not found.' });
+      }
+
+      const characterToUpdate = anime.characters.find(character => character._id == characterId);
+      if (!characterToUpdate) {
+        return res.status(404).json({ message: 'Character not found.' });
+      }
+
+      if (name) {
+        characterToUpdate.name = name;
+      }
+      if (image) {
+        characterToUpdate.image = image;
+      }
+
+      return anime.save();
+    })
+    .then(anime => {
+      res.json(anime);
+    })
+    .catch(err => {
+      console.error('Error updating character:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+app.delete('/animes/:animeId/characters/:characterId', (req, res) => {
+  const animeId = req.params.animeId;
+  const characterId = req.params.characterId;
+
+  Anime.findById(animeId)
+    .then(anime => {
+      if (!anime) {
+        return res.status(404).json({ message: 'Anime not found.' });
+      }
+
+      const characterToDeleteIndex = anime.characters.findIndex(character => character._id == characterId);
+      if (characterToDeleteIndex === -1) {
+        return res.status(404).json({ message: 'Character not found.' });
+      }
+
+      anime.characters.splice(characterToDeleteIndex, 1);
+      return anime.save();
+    })
+    .then(anime => {
+      res.json(anime);
+    })
+    .catch(err => {
+      console.error('Error deleting character:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

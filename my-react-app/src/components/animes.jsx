@@ -17,6 +17,7 @@ function Animes({ searchTerm }) {
         anime.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+   
     return (
         <div className="list-animes-component">
             {filteredAnimes.map((anime) => (
